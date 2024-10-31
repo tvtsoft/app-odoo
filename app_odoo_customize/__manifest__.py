@@ -23,7 +23,7 @@
 
 {
     'name': 'odoo18 Tweak,Ai Employee,Boost,Customize All in One. Customize,UI,Boost,Security,Data,Development Enhance',
-    'version': '24.10.09',
+    'version': '24.10.31',
     'author': 'odooai.cn',
     'category': 'Extra Tools',
     'website': 'https://www.odooai.cn',
@@ -32,7 +32,7 @@
     'sequence': 2,
     'images': ['static/description/banner.gif'],
     'summary': """
-    Odoo18 Supported. Ai as employee. 1 click Tweak odoo. 48 Functions odoo enhancement. for Customize, UI, Boost, Security, Development.
+    Odoo Enhance all in one, 50+ Functions.18 Supported. Ai as employee. 1 click Tweak odoo. Odoo Customize, UI, Boost, Security, Development.
     Easy reset data, clear data, reset account chart, reset Demo data.
     For quick debug. Set brand.
     """,
@@ -49,13 +49,12 @@
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/app_odoo_customize_views.xml',
-        'views/app_theme_config_settings_views.xml',
         'views/res_config_settings_views.xml',
         'views/ir_views.xml',
         'views/ir_module_module_views.xml',
         'views/ir_translation_views.xml',
         'views/ir_module_addons_path_views.xml',
-        'views/ir_ui_menu_views.xml',
+        'views/menu_views.xml',
         'views/ir_ui_view_views.xml',
         'views/ir_model_fields_views.xml',
         'views/ir_model_data_views.xml',
@@ -137,6 +136,9 @@
     45. Add addons path info to module.
     46. Add Help documentation anywhere.  easy get help for any odoo operation or action.
     47. Add ai robot app integration. Use Ai as your employee.
+    48. Add menu debug information of action and xml id.(odoo16 Only)
+    49. Add www.odooai.cn cloud setting. Quick get odoo support document.(odoo18 Only)
+    50. Add www.odooapp.cn China store support. Quick access odoo china app store.(odoo18 Only)
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
@@ -190,5 +192,9 @@
     44. 可配置停用自动用户订阅功能，这会提速odoo，减少资源消耗
     45. 为应用模块增加模块路径信息
     46. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.
+    47. 增加Ai模块相关信息，可以快速访问ai模块，使用ai员工.
+    48. 增加菜单Debug，可以快速查看每个菜单的调试信息如 action 及 xml id.(仅odoo16)
+    49. 增加欧度智能云面板设定，快速访问Odoo中文版云服务，www.odooai.cn (odoo18 Only)
+    50. 增加对 www.odooapp.cn 的应用模块增强，云更新，快速访问Odoo中文应用商店.(odoo18 Only)
     """,
 }

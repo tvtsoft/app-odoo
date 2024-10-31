@@ -38,8 +38,8 @@
 ##############################################################################
 
 {
-    'name': "odooAi Common Util and Tools",
-    'version': '24.10.09',
+    'name': "odooAi Common Util and Tools,欧度智能基础功能及面板",
+    'version': '24.10.31',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -51,7 +51,7 @@
     'images': ['static/description/banner.png'],
     'summary': '''
     Core for common use for odooai.cn apps.
-    基础核心，必须没有要被依赖字段及视图等，实现auto_install
+    基础核心及云面板，必须没有要被依赖字段及视图等，实现auto_install
     ''',
     'description': '''
     need to setup odoo.conf, add follow:
@@ -78,9 +78,11 @@
     ''',
     'depends': [
         'mail',
+        'base_setup',
         'web',
     ],
     'data': [
+        'views/res_config_settings_views.xml',
         'views/ir_cron_views.xml',
         # 'report/.xml',
     ],

@@ -1,12 +1,14 @@
 # Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app_common
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 18.0-20241031\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-08 14:28+0000\n"
-"PO-Revision-Date: 2018-01-08 14:28+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2024-10-31 11:14+0000\n"
+"PO-Revision-Date: 2024-10-31 11:14+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,9 +16,60 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: app_common
+#. odoo-python
+#: code:addons/app_common/models/ir_mail_server.py:0
+#: code:addons/app_common/models/mail_mail.py:0
+msgid "=================Email to ignore: %s"
+msgstr "================= 忽略不发送的Email: %s"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_base
+msgid "Base"
+msgstr "基础"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: app_common
+#. odoo-python
+#: code:addons/app_common/models/ir_mail_server.py:0
+msgid "Email to ignore: %s"
+msgstr "忽略的Email: %s"
+
+#. module: app_common
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid ""
+"Get the Industry Apps, Themes and Support from China odooapp store.\n"
+"                                        https://www.odooapp.cn"
+msgstr "获取Odoo行业应用，模块，主题。请访问Odoo中国应用商店\n"
+"                                        https://www.odooapp.cn"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTP 路由"
+
+#. module: app_common
 #: model:ir.model.fields,field_description:app_common.field_ir_cron__trigger_user_id
 msgid "Last Trigger User"
 msgstr "手动运行用户"
+
+#. module: app_common
+#: model:ir.model.fields,field_description:app_common.field_res_users__login
+msgid "Login"
+msgstr "登录"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_ir_mail_server
+msgid "Mail Server"
+msgstr "邮件服务器"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "发出邮件"
 
 #. module: app_common
 #: model:ir.model,name:app_common.model_ir_cron
@@ -24,6 +77,21 @@ msgid "Scheduled Actions"
 msgstr "安排的动作"
 
 #. module: app_common
-#: model:ir.model,name:app_common.model_ir_ui_view
-msgid "View"
-msgstr "查看"
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid "Setup the communication to odooAi Cloud"
+msgstr "设置云面板"
+
+#. module: app_common
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid ""
+"Visit our website for more apps and Support.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\thttps://www.odooai.cn"
+msgstr ""
+"欢迎访问欧度智能官方网站，获取Odoo企业级运营支持。\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t https://www.odooai.cn"
+
+#. module: app_common
+#: model:ir.actions.act_window,name:app_common.action_odooai_cloud_config
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid "odooAi Cloud"
+msgstr "欧度智能云"
