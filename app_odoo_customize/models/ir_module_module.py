@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, modules, tools, _
+from odoo.addons.base.models.ir_module import assert_log_admin_access
 
 import operator
 
 
-class IrModule(models.Model):
+class IrModuleModule(models.Model):
     _inherit = 'ir.module.module'
 
     # attention: Incorrect field names !!
@@ -56,6 +57,12 @@ class IrModule(models.Model):
             }
         }
 
+    @assert_log_admin_access
+    def button_immediate_upgrade(self):
+        # 升级前都先更新 .po
+        res = self.module_multi_refresh_po()
+        return super(IrModuleModule, self).button_immediate_upgrade()
+
     def button_get_po(self):
         self.ensure_one()
         action = self.env.ref('app_odoo_customize.action_server_module_multi_get_po').sudo().read()[0]
@@ -65,7 +72,7 @@ class IrModule(models.Model):
         return action
 
     def update_list(self):
-        res = super(IrModule, self).update_list()
+        res = super(IrModuleModule, self).update_list()
         default_version = modules.adapt_version('1.0')
         known_mods = self.with_context(lang=None).search([])
         known_mods_names = {mod.name: mod for mod in known_mods}
