@@ -34,7 +34,7 @@
     9. 增加中文数字和阿拉伯数字的转换(可安装cn2an库，pip3 install cn2an)
     10. 注意，建议在没有业务数据，没有会计科目的初始环境。可以使用 "app_odoo_customize" 模块清除财务数据，重置会计科目。
 
-    中国财务，中国会计，中国城市
+    中国财务，中国会计
     欧度智能，odooai.cn
     The Latest Chinese Account
     Including the following data in the Accounting Standards for Business Enterprises
