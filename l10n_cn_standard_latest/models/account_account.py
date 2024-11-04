@@ -28,16 +28,29 @@ class AccountAccount(models.Model):
     parent_id = fields.Many2one('account.account', 'Parent Chart', index=True, ondelete='cascade')
     child_ids = fields.One2many('account.account', 'parent_id', 'Child Chart')
     parent_path = fields.Char(index=True)
+    # todo: view 类型只用于上级，不可在凭证中选择使用。  odoo 中使用 _compute_account_type 处理是找不到自动设置为 其上级科目
+    # 故暂时不增加此类型
+    # account_type = fields.fields.Selection(selection_add=[
+    #     ('view', 'View Only'),
+    # ])
 
     @api.model
-    def _search_new_account_code(self, company, digits, prefix, cache=None):
+    def _search_new_account_code(self, start_code, cache=None):
         # 分隔符，金蝶为 "."，用友为""，注意odoo中一级科目，现金默认定义是4位头，银行是6位头
-        delimiter = '.'
-        for num in range(1, 100):
-            new_code = str(prefix.ljust(digits - 1, '0')) + delimiter + '%02d' % (num)
-            if new_code in (cache or []):
-                continue
-            rec = self.search([('code', '=', new_code), ('company_id', 'child_of', company.root_id.id)], limit=1)
-            if not rec:
-                return new_code
-        raise UserError(_('Cannot generate an unused account code.'))
+        # 在 odoo18已优化可处理
+        """
+            Examples:
+                |  start_code  |  codes checked for availability                            |
+                +--------------+------------------------------------------------------------+
+                |    102100    |  102101, 102102, 102103, 102104, ...                       |
+                |     1598     |  1599, 1600, 1601, 1602, ...                               |
+                |   10.01.08   |  10.01.09, 10.01.10, 10.01.11, 10.01.12, ...               |
+                |   10.01.97   |  10.01.98, 10.01.99, 10.01.97.copy2, 10.01.97.copy3, ...   |
+                |    1021A     |  1021A, 1022A, 1023A, 1024A, ...                           |
+                |    hello     |  hello.copy, hello.copy2, hello.copy3, hello.copy4, ...    |
+                |     9998     |  9999, 9998.copy, 9998.copy2, 9998.copy3, ...              |
+        """
+        # delimiter = '.'
+        # start_code = start_code + delimiter + '01'
+        res = super()._search_new_account_code(start_code, cache)
+        return res
