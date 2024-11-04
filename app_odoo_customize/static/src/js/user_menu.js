@@ -95,7 +95,7 @@ patch(UserMenu.prototype, {
         browser.clearTimeout(self.toggleTimer);
         if (self.user_lang !== lang_code) {
             const res = await self.orm.call("res.users", "write", [
-                session.user_id[0], {'lang': lang_code}
+                user.userId, {'lang': lang_code}
             ]);
             location.reload();
             // 调用 action , 要先定义 self.action = useService("action")
