@@ -17,6 +17,8 @@
 
 from odoo import api, SUPERUSER_ID, _
 
+import logging
+_logger = logging.getLogger(__name__)
 
 def pre_init_hook(cr):
     """
@@ -26,25 +28,24 @@ def pre_init_hook(cr):
     pass
 
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     """
     数据初始化，只在安装后执行，更新时不执行
     """
     try:
-        env = api.Environment(cr, SUPERUSER_ID, {'active_test': False})
-        ids = env['product.category'].sudo().with_context(lang='zh_CN').search([
+        ids = env['product.category'].sudo().with_context(lang='zh_CN', active_test=False).search([
             ('parent_id', '!=', False)
         ], order='parent_path')
         for rec in ids:
             rec._compute_complete_name()
-        ids = env['stock.location'].sudo().with_context(lang='zh_CN').search([
+        ids = env['stock.location'].sudo().with_context(lang='zh_CN', active_test=False).search([
             ('location_id', '!=', False),
             ('usage', '!=', 'views'),
         ], order='parent_path')
         for rec in ids:
             rec._compute_complete_name()
         # 超级用户及模板用户改时区为中国
-        ids = env['res.users'].sudo().with_context(lang='zh_CN').browse([1,2,3,4,5])
+        ids = env['res.users'].sudo().with_context(lang='zh_CN', active_test=False).browse([1, 2, 3, 4, 5])
         # rec_extra = env.ref('base.template_portal_user_id')
         # if rec_extra:
         #     ids += rec_extra
@@ -53,18 +54,23 @@ def post_init_hook(cr, registry):
             'lang': "zh_CN",
         })
         # 公司价格改人民币
-        env = api.Environment(cr, SUPERUSER_ID, {'active_test': True})
-        ids = env['res.company'].sudo().search([], limit=1)
+        ids = env['res.company'].sudo().with_context(active_test=False).search([], limit=1)
         if ids:
-            ids.write({'currency_id': env.ref('base.CNY').id})
+            try:
+                ids.write({'currency_id': env.ref('base.CNY').id})
+            except Exception as e:
+                _logger.error('cn: company write currency_id error.')
         # 价格表改人民币
-        ids = env['product.pricelist'].sudo().search([], limit=1)
+        ids = env['product.pricelist'].sudo().with_context(active_test=False).search([], limit=1)
         if ids:
-            ids.write({'currency_id': env.ref('base.CNY').id})
+            try:
+                ids.write({'currency_id': env.ref('base.CNY').id})
+            except Exception as e:
+                _logger.error('cn: pricelist write currency_id error.')
     except Exception as e:
         raise Warning(e)
 
-def uninstall_hook(cr, registry):
+def uninstall_hook(env):
     """
     数据初始化，卸载时执行
     """

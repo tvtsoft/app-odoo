@@ -79,22 +79,23 @@
         </record>
 
         <!--Partner kanban 视图，用继承方式改写2017-11-23,ivan-->
-        <record id="app_res_partner_kanban_view" model="ir.ui.view">
-            <field name="name">app.res.partner.kanban</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
-            <field name="arch" type="xml">
-                <xpath expr="//templates" position="before">
-                    <field name="credit_limit"/>
-                </xpath>
-                <xpath expr="//div[hasclass('oe_kanban_details')]/div/ul" position="inside">
-                    <li t-if="record.credit_limit and record.credit_limit.raw_value">
-                        Credit：
-                        <field name="credit_limit"/>
-                    </li>
-                </xpath>
-            </field>
-        </record>
+<!--        todo: 迁移到 app_base 等-->
+<!--        <record id="app_res_partner_kanban_view" model="ir.ui.view">-->
+<!--            <field name="name">app.res.partner.kanban</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="base.res_partner_kanban_view"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//templates" position="before">-->
+<!--                    <field name="credit_limit"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//div[hasclass('oe_kanban_details')]/div/ul" position="inside">-->
+<!--                    <li t-if="record.credit_limit and record.credit_limit.raw_value">-->
+<!--                        Credit：-->
+<!--                        <field name="credit_limit"/>-->
+<!--                    </li>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
         <!--end客户-->
 
         <!-- 为供应商菜单单独增加筛选器 2017-11-13 -->

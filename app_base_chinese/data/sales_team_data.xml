@@ -4,8 +4,8 @@
         <record id="sales_team.team_sales_department" model="crm.team" context="{'lang': 'zh_CN'}">
             <field name="name">中国</field>
         </record>
-        <record id="sales_team.team_sales_department" model="crm.team" context="{'lang': 'en'}">
-            <field name="name">China</field>
-        </record>
+<!--        <record id="sales_team.team_sales_department" model="crm.team" context="{'lang': 'en'}">-->
+<!--            <field name="name">China</field>-->
+<!--        </record>-->
     </data>
 </odoo>

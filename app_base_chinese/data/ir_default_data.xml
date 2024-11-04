@@ -14,7 +14,7 @@
 <!--            eval="('res.users', 'notification_type', 'inbox')"/>-->
         <!--设置产品默认是可库存产品-->
          <function model="ir.default" name="set"
-            eval="('product.template', 'detailed_type', 'product')"/>
+            eval="('product.template', 'type', 'consu')"/>
         <!--设置翻译导出默认中文-->
          <function model="ir.default" name="set"
             eval="('base.language.export', 'lang', 'zh_CN')"/>
