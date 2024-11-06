@@ -96,3 +96,10 @@ class IrModuleModule(models.Model):
         if author in ['odooai.cn', 'sunpop.cn', 'odooapp.cn']:
             self.module_type = 'odooapp.cn'
         return res
+
+    def web_read(self, specification):
+        fields = list(specification.keys())
+        module_type = self.env.context.get('module_type', 'official')
+        if module_type == 'odooapp.cn':
+            self.env.context = {**self.env.context, "module_type": 'official'}
+        return super().web_read(specification)

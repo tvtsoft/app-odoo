@@ -73,6 +73,7 @@
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
+            'app_odoo_customize/static/src/js/base_import_list_renderer.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/user_menu.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
