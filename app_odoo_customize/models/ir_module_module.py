@@ -20,6 +20,7 @@ class IrModuleModule(models.Model):
     addons_path_id = fields.Many2one('ir.module.addons.path', string='Addons Path ID', readonly=True)
     addons_path = fields.Char(string='Addons Path', related='addons_path_id.path', readonly=True)
     license = fields.Char(readonly=True)
+    module_type = fields.Selection(selection_add=[('odooapp.cn', 'Odoo中文应用')])
 
     def module_multi_uninstall(self):
         """ Perform the various steps required to uninstall a module completely
@@ -87,5 +88,18 @@ class IrModuleModule(models.Model):
                     local_updatable = False
                 if mod.local_updatable != local_updatable:
                     mod.write({'local_updatable': local_updatable})
-            
         return res
+
+    def _update_from_terp(self, terp):
+        res = super()._update_from_terp(terp)
+        author = terp.get('author')
+        if author in ['odooai.cn', 'sunpop.cn', 'odooapp.cn']:
+            self.module_type = 'odooapp.cn'
+        return res
+
+    def web_read(self, specification):
+        fields = list(specification.keys())
+        module_type = self.env.context.get('module_type', 'official')
+        if module_type == 'odooapp.cn':
+            self.env.context = {**self.env.context, "module_type": 'official'}
+        return super().web_read(specification)
