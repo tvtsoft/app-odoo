@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0-20241031\n"
+"Project-Id-Version: Odoo Server 18.0+e-20241031\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-31 11:14+0000\n"
-"PO-Revision-Date: 2024-10-31 11:14+0000\n"
+"POT-Creation-Date: 2024-11-08 10:17+0000\n"
+"PO-Revision-Date: 2024-11-08 10:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,33 @@ msgid "Base"
 msgstr "基础"
 
 #. module: app_common
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid "Checked and Save to Enable odoo China cloud service."
+msgstr "勾选并保存，即可启用Odoo中文应用商店云服务"
+
+#. module: app_common
+#: model:ir.model.fields,help:app_common.field_res_config_settings__app_saas_ok
+msgid "Checked to Enable www.odooapp.cn cloud service."
+msgstr "勾选后启用Odoo中文应用商店云服务"
+
+#. module: app_common
+#: model:ir.model,name:app_common.model_res_config_settings
+msgid "Config Settings"
+msgstr "设置"
+
+#. module: app_common
 #: model:ir.model,name:app_common.model_res_partner
 msgid "Contact"
 msgstr "联系人"
+
+#. module: app_common
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid ""
+"Easy Get Odoo Chinese App, Theme, and industry solution. You can get the "
+"SaaS client from<br/>"
+msgstr ""
+"您可快速获取Odoo中文应用模块，主题，行业应用方案等。"
+"SaaS云客户端在此免费下载<br/>"
 
 #. module: app_common
 #. odoo-python
@@ -39,11 +63,18 @@ msgid "Email to ignore: %s"
 msgstr "忽略的Email: %s"
 
 #. module: app_common
+#: model:ir.model.fields,field_description:app_common.field_res_config_settings__app_saas_ok
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid "Enable CN SaaS"
+msgstr "启用Odoo中文云服务"
+
+#. module: app_common
 #: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
 msgid ""
 "Get the Industry Apps, Themes and Support from China odooapp store.\n"
 "                                        https://www.odooapp.cn"
-msgstr "获取Odoo行业应用，模块，主题。请访问Odoo中国应用商店\n"
+msgstr ""
+"获取Odoo行业应用，模块，主题。请访问Odoo中国应用商店\n"
 "                                        https://www.odooapp.cn"
 
 #. module: app_common
@@ -55,11 +86,6 @@ msgstr "HTTP 路由"
 #: model:ir.model.fields,field_description:app_common.field_ir_cron__trigger_user_id
 msgid "Last Trigger User"
 msgstr "手动运行用户"
-
-#. module: app_common
-#: model:ir.model.fields,field_description:app_common.field_res_users__login
-msgid "Login"
-msgstr "登录"
 
 #. module: app_common
 #: model:ir.model,name:app_common.model_ir_mail_server
@@ -82,6 +108,11 @@ msgid "Setup the communication to odooAi Cloud"
 msgstr "设置云面板"
 
 #. module: app_common
+#: model:ir.model.fields,help:app_common.field_res_users__login
+msgid "Used to log into the system"
+msgstr "用于用户登录系统"
+
+#. module: app_common
 #: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
 msgid ""
 "Visit our website for more apps and Support.\n"
@@ -89,6 +120,11 @@ msgid ""
 msgstr ""
 "欢迎访问欧度智能官方网站，获取Odoo企业级运营支持。\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t https://www.odooai.cn"
+
+#. module: app_common
+#: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
+msgid "https://www.odooapp.cn/apps/modules/app_saas"
+msgstr "https://www.odooapp.cn/apps/modules/app_saas"
 
 #. module: app_common
 #: model:ir.actions.act_window,name:app_common.action_odooai_cloud_config

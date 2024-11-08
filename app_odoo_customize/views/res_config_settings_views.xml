@@ -60,8 +60,6 @@
                                 <field name="app_navbar_pos_mobile"/>
                             </group>
                         </group>
-
-
                         <group string="User Menu">
                             <group>
                                 <field name="app_show_lang"/>
