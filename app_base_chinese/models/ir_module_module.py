@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import logging
 import lxml.html
 from odoo import api, fields, models, modules, tools, _
@@ -17,7 +18,7 @@ class Module(models.Model):
         for module in self:
             module_path = modules.get_module_path(module.name, display_warning=False)  # avoid to log warning for fake community module
             if module_path:
-                path = modules.check_resource_path(module_path, 'static/description/index_cn.html')
+                path = modules.check_resource_path(os.path.join(module_path, 'static/description/index_cn.html'))
             else:
                 module.description_html_cn = False
             if module_path and path:
