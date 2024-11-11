@@ -18,7 +18,12 @@ class Module(models.Model):
         for module in self:
             module_path = modules.get_module_path(module.name, display_warning=False)  # avoid to log warning for fake community module
             if module_path:
-                path = modules.check_resource_path(os.path.join(module_path, 'static/description/index_cn.html'))
+                index_path = os.path.join(module_path, 'static/description/index_cn.html')
+                index_path = os.path.normpath(index_path)
+                if os.path.exists(index_path):
+                    path = tools.misc.file_path(index_path)
+                else:
+                    path = False
             else:
                 module.description_html_cn = False
             if module_path and path:
