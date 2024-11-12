@@ -53,7 +53,7 @@ msgid ""
 "Easy Get Odoo Chinese App, Theme, and industry solution. You can get the "
 "SaaS client from<br/>"
 msgstr ""
-"您可快速获取Odoo中文应用模块，主题，行业应用方案等。"
+"您可快速获取Odoo中文应用模块，主题，行业应用方案等。我们不会搜索您系统的敏感信息，信息上传前都会征得您的同意。"
 "SaaS云客户端在此免费下载<br/>"
 
 #. module: app_common
