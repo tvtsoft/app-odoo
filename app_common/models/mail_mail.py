@@ -7,9 +7,10 @@ _logger = logging.getLogger(__name__)
 
 class MailMail(models.Model):
     _inherit = "mail.mail"
-    
+
     # 猴子补丁模式，改默认发邮件逻辑
-    def _send(self, auto_commit=False, raise_exception=False, smtp_session=None, alias_domain_id=False):
+    def _send(self, auto_commit=False, raise_exception=False, smtp_session=None, alias_domain_id=False,
+              mail_server=False, post_send_callback=None):
         for m in self:
             email_to = m.email_to
             # 忽略掉无效email，避免被ban
@@ -21,4 +22,4 @@ class MailMail(models.Model):
                     self = self - m
         if not self:
             return True
-        return super(MailMail, self)._send(auto_commit, raise_exception, smtp_session, alias_domain_id)
+        return super(MailMail, self)._send(auto_commit, raise_exception, smtp_session, alias_domain_id, mail_server, post_send_callback)
