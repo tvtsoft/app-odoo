@@ -27,24 +27,13 @@ def pre_init_hook(env):
 def post_init_hook(env):
     """
     数据初始化，只在安装后执行，更新时不执行
-    注意 account.account 中 code 处理已不同，主要用 json 存在 code_store 中，故要不可使用 sql，
-    同时 group_id 已为 compute 字段，无需设置
-    
+    此处不执行，只是记录，该数据已处理完成
     """
     # cr.execute("UPDATE account_account_template set group_id = "
     #            "(select id from account_group where account_group.code_prefix_start=trim(substring(account_account_template.code from 1 for 1)) limit 1);")
 
-    # for g in [
-    #     env.ref('l10n_cn_standard_latest.account_group_1'),
-    #     env.ref('l10n_cn_standard_latest.account_group_2'),
-    #     env.ref('l10n_cn_standard_latest.account_group_3'),
-    #     env.ref('l10n_cn_standard_latest.account_group_4'),
-    #     env.ref('l10n_cn_standard_latest.account_group_5'),
-    #     env.ref('l10n_cn_standard_latest.account_group_6'),
-    # ]:
-    #     res = env['account.account'].search([('code', 'like', g.code_prefix_start + '%')])
-    #     if res:
-    #         res.write({'group_id': g.id})
-    #     env.cr.commit()
+    env.cr.execute("UPDATE account_account set group_id = "
+               "(select id from account_group where account_group.code_prefix_start=trim(substring(account_account.code from 1 for 1)) limit 1);")
+    env.cr.commit()
     pass
 

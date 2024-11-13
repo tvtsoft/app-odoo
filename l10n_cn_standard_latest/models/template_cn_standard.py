@@ -36,7 +36,7 @@ class AccountChartTemplate(models.AbstractModel):
             self.env.company.id: {
                 'account_fiscal_country_id': 'base.cn',
                 'cash_account_code_prefix': '1001',
-                'bank_account_code_prefix': '1002.01',
+                'bank_account_code_prefix': '1002',
                 'transfer_account_code_prefix': '1003',
                 'account_default_pos_receivable_account_id': 'account_1124',
                 'account_sale_tax_id': 'l10n_cn_standard_sale_included_13',

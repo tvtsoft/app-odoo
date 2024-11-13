@@ -27,7 +27,7 @@ class AccountAccount(models.Model):
 
     parent_id = fields.Many2one('account.account', 'Parent Chart', index=True, ondelete='cascade')
     child_ids = fields.One2many('account.account', 'parent_id', 'Child Chart')
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
     # todo: view 类型只用于上级，不可在凭证中选择使用。  odoo 中使用 _compute_account_type 处理是找不到自动设置为 其上级科目
     # 故暂时不增加此类型
     # account_type = fields.fields.Selection(selection_add=[
