@@ -20,7 +20,7 @@ class AccountChartTemplate(models.AbstractModel):
     @template('cn_standard')
     def _get_cn_standard_template_data(self):
         return {
-            'name': _('2024中国企业会计科目表-odoo17'),
+            'name': _('2025中国企业会计科目表-odoo18'),
             'code_digits': 4,
             'property_account_receivable_id': 'account_1122',
             'property_account_payable_id': 'account_2202',
