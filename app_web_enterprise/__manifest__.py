@@ -18,7 +18,7 @@
 
 {
     'name': "odoo18 Enterprise enhance Pack,企业版界面及操作增强",
-    'version': '24.08.20',
+    'version': '18.0.24.08.20',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
