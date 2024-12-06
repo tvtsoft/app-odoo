@@ -26,6 +26,7 @@
                     widget="badge" optional="show"/>
                 <field name="active" optional="show" widget="boolean_toggle"/>
                 <field name="user_id" optional="show" widget="many2one_avatar_user"/>
+                <field name="w_int_time_delta" widget="time_delta"/>
             </list>
         </field>
     </record>
@@ -121,6 +122,7 @@
                                     <field name="w_progressbar" widget="progressbar" options="{'editable': true}" title="Integer"/>
                                     <field name="w_percentpie" widget="percentpie" title="float"/>
                                     <field name="w_percentage" widget="percentage" title="float"/>
+                                    <field name="w_int_time_delta" widget="time_delta" title="int"/>
                                 </group>
                                 <group string="selection">
                                     <!--                                    status_with_color 是在  kanban中使用-->

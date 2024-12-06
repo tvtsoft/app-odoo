@@ -108,10 +108,11 @@ class ModelNew(models.Model):
                                    column1="new_id", column2="partner_id",
                                    string="autosave_many2many_tags")
 
-    w_date_begin = fields.Char(string='Date Begin')
-    w_date_end = fields.Char(string='Date End')
+    w_date_begin = fields.Char(string='Widget Date Begin')
+    w_date_end = fields.Char(string='Widget Date End')
     w_toggle_button = fields.Boolean(string='toggle_button')
     w_res_partner_many2one = fields.Char(string='Boolean toggle')
+    w_int_time_delta = fields.Integer(string='time_delta', default=50)
 
     _sql_constraints = [('uniq_ref', 'unique(ref)', 'The reference must be unique.')]
 
