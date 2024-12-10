@@ -14,7 +14,7 @@ def app_relaxng(view_type):
     """ Return a validator for the given view type, or None. """
     if view_type not in _relaxng_cache:
         # tree, search 特殊
-        if view_type in ['tree', 'search']:
+        if view_type in ['list', 'search']:
             _file = get_resource_path('app_common', 'rng', '%s_view.rng' % view_type)
         else:
             _file = get_resource_path('base', 'rng', '%s_view.rng' % view_type)
@@ -27,16 +27,16 @@ def app_relaxng(view_type):
                 _relaxng_cache[view_type] = None
     return _relaxng_cache[view_type]
 
-# view_validation.relaxng = app_relaxng
-#
+view_validation.relaxng = app_relaxng
+
 # class View(models.Model):
 #     _inherit = 'ir.ui.view'
-#
+
 #     def __init__(self, env, ids, prefetch_ids):
 #         # 这里应该是无必要，但为了更安全
 #         super(View, self).__init__(env, ids, prefetch_ids)
 #         view_validation.relaxng = app_relaxng
-#
-#     # todo: 有可能需要处理增加的 header等标签
-#     # 直接重写原生方法
-#     # def transfer_node_to_modifiers(node, modifiers, context=None, in_tree_view=False):
+
+    # todo: 有可能需要处理增加的 header等标签
+    # 直接重写原生方法
+    # def transfer_node_to_modifiers(node, modifiers, context=None, in_tree_view=False):

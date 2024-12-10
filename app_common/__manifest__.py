@@ -39,7 +39,7 @@
 
 {
     'name': "odooAi Common Util and Tools,欧度智能基础功能及面板",
-    'version': '18.0.24.11.12',
+    'version': '18.0.24.12.10',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -70,8 +70,8 @@
     12. Support Odoo 18,17,16,15,14,13,12, Enterprise and Community and odoo.sh Edition.
     13. Full Open Source.
     ==========
-    1. 
-    2. 
+    1.
+    2.
     3. 多语言支持
     4. 多公司支持
     5. Odoo 16, 企业版，社区版，多版本支持
