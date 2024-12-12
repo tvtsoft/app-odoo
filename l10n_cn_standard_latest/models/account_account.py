@@ -20,37 +20,4 @@ from odoo.exceptions import UserError, ValidationError
 
 class AccountAccount(models.Model):
     _inherit = ['account.account']
-    _parent_name = "parent_id"
-    _parent_store = True
-    _parent_order = 'code'
-    # _rec_name = 'complete_name'
-
-    parent_id = fields.Many2one('account.account', 'Parent Chart', index=True, ondelete='cascade')
-    child_ids = fields.One2many('account.account', 'parent_id', 'Child Chart')
-    parent_path = fields.Char(index=True)
-    # todo: view 类型只用于上级，不可在凭证中选择使用。  odoo 中使用 _compute_account_type 处理是找不到自动设置为 其上级科目
-    # 故暂时不增加此类型
-    # account_type = fields.fields.Selection(selection_add=[
-    #     ('view', 'View Only'),
-    # ])
-
-    @api.model
-    def _search_new_account_code(self, start_code, cache=None):
-        # 分隔符，金蝶为 "."，用友为""，注意odoo中一级科目，现金默认定义是4位头，银行是6位头
-        # 在 odoo18已优化可处理
-        """
-            Examples:
-                |  start_code  |  codes checked for availability                            |
-                +--------------+------------------------------------------------------------+
-                |    102100    |  102101, 102102, 102103, 102104, ...                       |
-                |     1598     |  1599, 1600, 1601, 1602, ...                               |
-                |   10.01.08   |  10.01.09, 10.01.10, 10.01.11, 10.01.12, ...               |
-                |   10.01.97   |  10.01.98, 10.01.99, 10.01.97.copy2, 10.01.97.copy3, ...   |
-                |    1021A     |  1021A, 1022A, 1023A, 1024A, ...                           |
-                |    hello     |  hello.copy, hello.copy2, hello.copy3, hello.copy4, ...    |
-                |     9998     |  9999, 9998.copy, 9998.copy2, 9998.copy3, ...              |
-        """
-        # delimiter = '.'
-        # start_code = start_code + delimiter + '01'
-        res = super()._search_new_account_code(start_code, cache)
-        return res
+    # 相关方法处理移至 app_account_ztree

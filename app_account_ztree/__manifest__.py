@@ -17,7 +17,7 @@
 
 {
     'name': "App Account Multi Level Chart, parent children tree",
-    'version': '18.0.24.12.09',
+    'version': '18.0.24.12.12',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -38,15 +38,11 @@
     'currency': 'EUR',
     'depends': [
         'account',
-        'l10n_cn_standard_latest',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'data': [
         'views/account_account_views.xml',
-    ],
-    'demo': [
-    ],
-    'test': [
+        'views/res_company_views.xml',
     ],
     'post_load': None,
     'post_init_hook': 'post_init_hook',
