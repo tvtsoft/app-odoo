@@ -21,7 +21,7 @@
 .o_web_client.navbar_pos_bottom {
 
   @media (max-width: 768px) {
-    --o-navbar-height: 80px;
+    --o-navbar-height: 46px;
   }
   flex-direction: column-reverse!important;
   .o_navbar {
@@ -29,7 +29,7 @@
 
     .o_main_navbar {
       @media (max-width: 768px) {
-        --o-navbar-height: 80px;
+        --o-navbar-height: 46px;
         padding: 0 var(--o-navbar-height);
       }
 

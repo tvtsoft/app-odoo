@@ -1,15 +1,13 @@
 //自定义的navbar
-$o-navbar-background: rgba($o-brand-odoo, .8);
-$o-navbar-entry-color: $o-gray-200 ;
+$o-navbar-background: rgba($o-brand-odoo, .9);
+$o-navbar-entry-color: $o-form-lightsecondary;
 
-$o-navbar-entry-bg--hover: rgba($o-brand-odoo, 9);
-$o-navbar-entry-color--hover: $o-gray-200 ;
+$o-navbar-entry-bg--hover: transparent;
+$o-navbar-entry-color--hover: $o-form-lightsecondary;
 
-$o-navbar-entry-bg--active: rgba($o-brand-odoo, .9) ;
-$o-navbar-entry-color--active: $o-gray-100 ;
+$o-navbar-entry-bg--active: rgba($o-brand-odoo, .95) ;
+$o-navbar-entry-color--active: $o-brand-lightsecondary ;
 
-$o-navbar-brand-color: $o-gray-100 ;
+$o-navbar-brand-color: $o-brand-lightsecondary;
 
-$o-navbar-entry-color: rgba($o-white, .9);
-$o-navbar-entry-color--hover: $o-white;
 
