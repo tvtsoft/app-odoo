@@ -1,0 +1,36 @@
+//自定义的navbar
+.o_web_client {
+  .o_main_navbar {
+    --NavBar-entry-color: #{$o-navbar-entry-color};
+    --NavBar-entry-color--hover: #{$o-navbar-entry-color--hover};
+    --NavBar-entry-color--active: #{$o-navbar-entry-color--active};
+
+    --NavBar-entry-borderColor-active: #{$o-navbar-entry-bg--active};
+
+    --NavBar-entry-backgroundColor: #{$o-navbar-background};
+    --NavBar-entry-backgroundColor--hover: #{$o-navbar-entry-bg--hover};
+    --NavBar-entry-backgroundColor--active: #{$o-navbar-entry-bg--active};
+    --NavBar-entry-backgroundColor--focus: #{$o-navbar-entry-bg--hover};
+    --NavBar-brand-color: #{$o-navbar-brand-color};
+
+    background: var(--NavBar-entry-backgroundColor, #{$o-navbar-background});
+
+    .o_menu_sections {
+      .o_nav_entry, .dropdown-toggle {
+        background: transparent;
+
+        &:hover {
+          background: var(--NavBar-entry-backgroundColor--hover, #{$o-navbar-entry-bg--hover});
+        }
+
+        &:focus {
+          background: var(--NavBar-entry-backgroundColor--focus, #{$o-navbar-entry-bg--hover});
+        }
+
+        &:active {
+          background: var(--NavBar-entry-backgroundColor--active, #{$o-navbar-entry-bg--active});
+        }
+      }
+    }
+  }
+}

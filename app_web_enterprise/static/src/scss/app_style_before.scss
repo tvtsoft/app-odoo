@@ -1,9 +1,8 @@
-//navbar
-$o-navbar-background: rgba($o-brand-odoo, .06);
-
-.o_main_navbar {
-  --NavBar-entry-backgroundColor: $o-navbar-background;
-  background: $o-navbar-background;
+//字体大小
+.o_web_client {
+  .o_home_menu {
+    font-size: $o-home-menu-font-size-base;
+  }
 }
 //navbar 的下拉箭头
 //在顶部

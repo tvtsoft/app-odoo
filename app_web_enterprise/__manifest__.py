@@ -18,7 +18,7 @@
 
 {
     'name': "odoo18 Enterprise enhance Pack,企业版界面及操作增强",
-    'version': '18.0.24.08.20',
+    'version': '18.0.24.12.14',
     'author': 'odooai.cn',
     'category': 'Extra tools',
     'website': 'https://www.odooai.cn',
@@ -74,8 +74,11 @@
             ('before', 'web_enterprise/static/src/scss/primary_variables.scss', 'app_web_enterprise/static/src/scss/primary_variables.scss'),
         ],
         'web.assets_backend': [
+            ('before', 'web_enterprise/static/src/webclient/home_menu/home_menu.variables.scss', 'app_web_enterprise/static/src/scss/home_menu.variables.scss'),
             ('before', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_before.scss'),
             ('after', 'web/static/src/views/**/*', 'app_web_enterprise/static/src/scss/app_style_after.scss'),
+            ('after', 'web_enterprise/static/src/webclient/navbar/navbar.variables.scss', 'app_web_enterprise/static/src/scss/navbar.variables.scss'),
+            ('after', 'web_enterprise/static/src/webclient/navbar/navbar.scss', 'app_web_enterprise/static/src/scss/navbar.scss'),
             'app_web_enterprise/static/src/webclient/**/*.xml',
             'app_web_enterprise/static/src/xml/res_config_edition.xml',
             # 'app_web_enterprise/static/src/xml/form.xml',
