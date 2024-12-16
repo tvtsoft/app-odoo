@@ -1,5 +1,4 @@
 //自定义的navbar
-$o-navbar-background: rgba($o-brand-odoo, .9);
 $o-navbar-entry-color: $o-form-lightsecondary;
 
 $o-navbar-entry-bg--hover: transparent;
@@ -10,4 +9,5 @@ $o-navbar-entry-color--active: $o-brand-lightsecondary ;
 
 $o-navbar-brand-color: $o-brand-lightsecondary;
 
+$o-navbar-background: linear-gradient(45deg, #{$o-brand-odoo}, #{$o-action});
 

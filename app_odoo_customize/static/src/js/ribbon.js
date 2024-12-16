@@ -49,7 +49,7 @@ export class WebEnvironmentRibbon extends Component {
             .call("web.environment.ribbon.backend", "get_environment_ribbon")
             .then(function (ribbon_data) {
                 // Ribbon name
-                if (ribbon_data.name && ribbon_data.name !== "False") {
+                if (ribbon_data.name && ribbon_data.name !== "False" && ribbon_data.name !== "0") {
                     ribbon.classList.remove('o_hidden');
                     ribbon.innerHTML = ribbon_data.name;
                 }
