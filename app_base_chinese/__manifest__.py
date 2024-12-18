@@ -17,8 +17,8 @@
 
 
 {
-    'name': 'odoo中文版套件之基础,中国会计基础,Chinese Enhance All in One',
-    'version': '18.0.24.12.16',
+    'name': 'odoo中国版，中文本土化套件,中国会计基础,Odoo Chinese localization Enhance All in One',
+    'version': '18.0.24.12.18',
     'author': 'odooai.cn',
     'category': 'Base',
     'website': 'https://www.odooai.cn',
@@ -28,13 +28,13 @@
     'price': 0,
     'currency': 'EUR',
     'summary': '''
-    odoo简体中文版全面增强. Chinese enhance. Out of the box use odoo in china. Chinese address format, number format, money format.
+    odoo简体中文版全面增强. 更具政策敏感性的翻译。Chinese enhance. Out of the box use odoo in china. Chinese address format, number format, money format.
     Set all chinese default value. Default country, timezone, currency, partner.中国会计基础模块.
     ''',
     'description': '''
     odoo Chinese Enhance. odoo中国版增强-基础
     1. 中文地址格式，适用于所有中国中文客户、供应商、合作伙伴、用户、员工信息等
-    2. 中文默认值，如国家、时区、货币等。处理模块 base, product.
+    2. 中文默认值，如国家/地区、时区、货币等。处理模块 base, product.
     3. 客户加简称，地址显示中文化，客户编码显示优先
     4. 客户地址显示增加手机号与电话号码
     5. 货币处理，人民币增强，增加排序显示
@@ -42,13 +42,14 @@
     7. 修正仓库位置的列表及m2o字段中不显示中文目录名的Bug
     8. 超级用户改时区为 中国
     9. 时间格式年月日为 中国格式，如 2023-08-08，时间为 12:34
-    10. 国家增加排序，中国排第一 
-    11. 收款相关显示中国习惯    
+    10. 国家/地区增加排序，中国排第一
+    11. 收款相关显示中国习惯
     12. 翻译导出默认中文，默认po
     13. [默认已移除，可自行加载.py]在 base 模型增加 name_en_US 字段，赋值后同时改翻译值
     14. 常用小数精度调整
     15. 销售团队改为中国
     16. 精简语言的显示，如 Chinese简体中文改为 中文
+    17. 将'国家'字段处理为'国家/地区'，避免政策敏感问题(需配合我司Odoo中文翻译)
     21. 多语言支持，多公司支持
     22. Odoo 18,17,16,15,14,13,12, 企业版，社区版，在线SaaS.sh版，等全版本支持
     23. 代码完全开源
