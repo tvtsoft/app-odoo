@@ -16,6 +16,7 @@
                 <field name="complete_name" position="after">
                     <field name="name"/>
                     <field name="parent_id"/>
+                    <field name="active" widget="boolean_toggle" optional="show"/>
                 </field>
             </field>
         </record>

@@ -32,14 +32,15 @@
     'sequence': 2,
     'images': ['static/description/banner.gif'],
     'summary': """
-    Odoo Enhance all in one, 50+ Functions.18 Supported. Ai as employee. 1 click Tweak odoo. Odoo Customize, UI, Boost, Security, Development.
+    50+ Odoo Enhance in 1 click Tweak odoo. all in one odoo enhancement. for Customize,UI,Boost Security,Development.
     Easy reset data, clear data, reset account chart, reset Demo data.
-    For quick debug. Set brand.
+    For quick debug. Set brand,Language Switcher all in one.
     """,
     'depends': [
         'app_common',
         'base_setup',
-        'web',
+        'base_import',
+        'portal',
         'mail',
         # 'digest',
         # when enterprise
@@ -49,12 +50,13 @@
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/app_odoo_customize_views.xml',
+        'views/app_theme_config_settings_views.xml',
         'views/res_config_settings_views.xml',
         'views/ir_views.xml',
         'views/ir_module_module_views.xml',
         'views/ir_translation_views.xml',
         'views/ir_module_addons_path_views.xml',
-        'views/menu_views.xml',
+        'views/ir_ui_menu_views.xml',
         'views/ir_ui_view_views.xml',
         'views/ir_model_fields_views.xml',
         'views/ir_model_data_views.xml',
@@ -73,23 +75,26 @@
             'app_odoo_customize/static/src/js/user_menu.js',
             'app_odoo_customize/static/src/js/ribbon.js',
             'app_odoo_customize/static/src/js/dialog.js',
-            'app_odoo_customize/static/src/js/base_import_list_renderer.js',
+            'app_odoo_customize/static/src/js/navbar.js',
             'app_odoo_customize/static/src/webclient/*.js',
             'app_odoo_customize/static/src/webclient/user_menu.xml',
             'app_odoo_customize/static/src/xml/res_config_edition.xml',
+            'app_odoo_customize/static/src/xml/debug_templates.xml',
+            'app_odoo_customize/static/src/xml/base_import.xml',
         ],
     },
     'pre_init_hook': 'pre_init_hook',
+    'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'auto_install': True,
     'description': """
-
     App Customize Odoo (Change Title,Language,Documentation,Quick Debug)
     ============
-    White label odoo.
+    White label odoo. UI and Development Enhance.
     Support Odoo 18,17,16,15,14,13,12,11,10,9.
     You can config odoo, make it look like your own platform.
+    ============
     1. Deletes Odoo label in footer
     2. Replaces "Odoo" in Windows title
     3. Customize Documentation, Support, About links and title in usermenu
@@ -111,7 +116,7 @@
     19. One Click to clear all data (Sometime pls click twice)
     20. Show quick upgrade in app dashboard, click to show module info not go to odoo.com
     21. Can clear and reset account chart. Be cautious
-    22. Update online manual and developer document to odoo12
+    22. Update online manual and developer document to odoo16
     23. Add reset or clear website blog data
     24. Customize Odoo Native Module(eg. Enterprise) Url
     25. Add remove expense data
@@ -137,16 +142,17 @@
     45. Add addons path info to module.
     46. Add Help documentation anywhere.  easy get help for any odoo operation or action.
     47. Add ai robot app integration. Use Ai as your employee.
-    48. Add menu debug information of action and xml id.(odoo16 Only)
-    49. Add www.odooai.cn cloud setting. Quick get odoo support document.(odoo18 Only)
-    50. Add www.odooapp.cn China store support. Quick access odoo china app store.(odoo18 Only)
+    48. Add configurable Test Label, Demo Ribbon on top menu.
+    49. Add SaaS client switch for online Translate sync(18 only).
+    50. Quick Menu manager. de-active / active menu.
 
     This module can help to white label the Odoo.
     Also helpful for training and support for your odoo end-user.
     The user can get the help document just by one click.
     ## 在符合odoo开源协议的前提下，自定义你的odoo系统
     可完全自行设置下列选项，将 odoo 整合进自有软件产品
-    支持odoo 16,15,14,13,12, 11, 10, 9 版本，社区版企业版通用
+    支持Odoo 18,17,16,15,14,13,12, 11, 10, 9 版本，社区版企业版通用
+    ============
     1. 删除菜单导航页脚的 Odoo 标签
     2. 将弹出窗口中 "Odoo" 设置为自定义名称
     3. 自定义用户菜单中的 Documentation, Support, About 的链接
@@ -157,7 +163,7 @@
     8. 在用户菜单中增加开发者手册，含python教程，jquery参考，Jinja2模板，PostgresSQL参考
     9. 在用户菜单中自定义"My odoo.com account"
     10. 单独设置面板，每个选项都可以自定义
-    11. 提供236个国家的国旗文件（部份需要自行设置文件名）
+    11. 提供236个国家/地区的国旗文件（部份需要自行设置文件名）
     12. 多语言版本
     13. 自定义登陆界面中的 Powered by Odoo
     14. 快速删除测试数据，支持模块包括：销售/POS门店/采购/生产/库存/会计/项目/消息与工作流等.
@@ -194,8 +200,8 @@
     45. 为应用模块增加模块路径信息
     46. 增加快速帮助文档，可以在任意操作中获取相关的 odoo 帮助.
     47. 增加Ai模块相关信息，可以快速访问ai模块，使用ai员工.
-    48. 增加菜单Debug，可以快速查看每个菜单的调试信息如 action 及 xml id.(仅odoo16)
-    49. 增加欧度智能云面板设定，快速访问Odoo中文版云服务，www.odooai.cn (odoo18 Only)
-    50. 增加对 www.odooapp.cn 的应用模块增强，云更新，快速访问Odoo中文应用商店.(odoo18 Only)
+    48. 增加可配置的系统调试标签，用于系统测试期提示.
+    49. 增加 SaaS 客户端开头，可让用户安装在线翻译同步模块及在线更新(仅odoo18).
+    50. 快速菜单管理，快速禁用/启用菜单.
     """,
 }

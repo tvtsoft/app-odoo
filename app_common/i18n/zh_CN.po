@@ -129,5 +129,5 @@ msgstr "https://www.odooapp.cn/apps/modules/app_saas"
 #. module: app_common
 #: model:ir.actions.act_window,name:app_common.action_odooai_cloud_config
 #: model_terms:ir.ui.view,arch_db:app_common.app_res_config_settings_view_form
-msgid "odooAi Cloud"
+msgid "odooAi Cloud Settings"
 msgstr "欧度智能云"
