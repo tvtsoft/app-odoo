@@ -92,8 +92,8 @@ class IrModuleModule(models.Model):
 
     def _update_from_terp(self, terp):
         res = super()._update_from_terp(terp)
-        author = terp.get('author')
-        if author in ['odooai.cn', 'sunpop.cn', 'odooapp.cn']:
+        author = terp.get('author').lower()
+        if author in ['odooai.cn', 'sunpop.cn', 'odooapp.cn', 'www.odooai.cn', 'www.sunpop.cn', 'www.odooapp.cn']:
             self.module_type = 'odooapp.cn'
         return res
 
